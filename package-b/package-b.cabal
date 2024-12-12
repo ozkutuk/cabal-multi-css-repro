@@ -1,0 +1,23 @@
+cabal-version:      3.0
+name:               package-b
+version:            0.1.0.0
+license:            BSD-3-Clause
+license-file:       LICENSE
+author:             Berk Özkütük
+maintainer:         berk@ozkutuk.me
+build-type:         Simple
+
+library
+    exposed-modules:  MyLib
+    build-depends:    base ^>=4.18.2.1
+    hs-source-dirs:   src
+    default-language: Haskell2010
+
+executable package-b
+    main-is:          Main.hs
+    build-depends:
+        base ^>=4.18.2.1,
+        package-b
+
+    hs-source-dirs:   app
+    default-language: Haskell2010
